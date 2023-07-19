@@ -1,5 +1,5 @@
 # Vani-2022
-This website is designed to access all the photos and videos of my family function at a single place. Before this project, if we want to see the images we need to go to google drive and see the photos and folders one by one and at different folders and drives. But now we can enjoying it on just one click.
+This website is designed to access all the photos and videos of my family function at a single place. Before this project, if we want to see the images we need to go to google drive and see the photos and folders one by one and at different folders and drives. But now we are enjoying it in just one click.
 
 ### Technology Used -
 #### For FrontEnd-
