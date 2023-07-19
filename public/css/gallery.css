@@ -1,0 +1,185 @@
+/* body {
+  font-family: 'Playfair Display', serif;
+} */
+
+.cards {
+  margin-top: 10rem;
+  margin-bottom: 10px;
+}
+
+/* Cards Heading */
+
+.title1 {
+  /* margin-left: 2px; */
+  text-align: center;
+  color: #FFFF00;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  padding: 5px 0 5px 0;
+}
+
+.haldi {
+  color: #FAC213;
+}
+
+.title2 {
+  text-align: center;
+  color: #82954B;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  padding: 5px 0 5px 0;
+}
+
+.mehndi {
+  color: #9EB23B;
+}
+
+/* font-family: 'Dancing Script', cursive;
+font-family: 'Lobster', cursive;
+font-family: 'Playfair Display', serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Mono', monospace; */
+
+.title3 {
+  text-align: center;
+  color: #ECB390;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  padding: 5px 0 5px 0;
+}
+
+.sangeet {
+  color: #ECB390;
+}
+
+.title4 {
+  text-align: center;
+  color: #A20A0A;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  padding: 5px 0 5px 0;
+}
+
+.reception {
+  color: #DD4A48;
+}
+
+/* E02401 */
+.title5 {
+  text-align: center;
+  color: #A13333;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  padding: 5px 0 5px 0;
+}
+
+.welcome {
+  color: #F5C3BC;
+}
+
+.title6 {
+  text-align: center;
+  color: #A10035;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  padding: 5px 0 5px 0;
+}
+
+.nikasi {
+  color: #FFDBA4;
+}
+
+/* buttons */
+
+.haldibutton {
+  margin-left: 60px;
+  margin-top: 20px;
+  color: #fff;
+}
+
+.haldibutton:hover {
+  color: #fff;
+}
+
+.mehndibutton {
+  margin-left: 60px;
+  margin-top: 15px;
+  color: #fff;
+}
+
+.sangeetbutton {
+  margin-left: 60px;
+  background-color: #ECB390;
+  color: #fff;
+}
+
+.sangeetbutton:hover {
+  color: #fff;
+}
+
+.receptnbutton {
+  margin-left: 60px;
+  margin-top: 70px;
+  background-color: #A20A0A;
+  color: #fff;
+}
+
+.receptnbutton:hover {
+  color: #fff;
+}
+
+.welcomebutton {
+  margin-left: 60px;
+  margin-top: 22px;
+  background-color: #A13333;
+  color: #fff;
+}
+
+.welcomebutton:hover {
+  color: #fff;
+}
+
+.nikasibutton {
+  margin-left: 60px;
+  margin-top: 22px;
+  background-color: #A10035;
+  color: #fff;
+}
+
+.nikasibutton:hover {
+  color: #fff;
+}
+
+.shaayri {
+  text-align: center;
+}
+
+/* Footer and Bottom to Top button */
+
+.footer {
+  background-color: #000000;
+  color: #fff;
+  padding-top:15px;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.scroll {
+  position: fixed;
+  bottom: 15px;
+  right: 10px;
+  z-index: 3;
+  cursor: pointer;
+  padding: 0;
+  outline: 0;
+  margin: 0;
+  border: none;
+  background: none;
+}
+
+.paragraph {
+  font-size: 0.8rem;
+}

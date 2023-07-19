@@ -1,0 +1,63 @@
+.bgcolor {
+  background-color: #000000;
+}
+
+/* Underline effect in header */
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color:#fff;
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1.5px;
+  bottom: 0;
+  left: 0;
+  background-color:#fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom;
+}
+
+/* Middle Section */
+
+.cards {
+  justify-content: center;
+  text-align: center;
+  margin-top: 10rem;
+}
+
+/* Contact Section */
+
+.contactSection {
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+.anchor {
+  margin-left: 550px;
+}
+
+/* Footer and Bottom to Top button */
+
+.footer {
+  background-color: #000000;
+  color: #fff;
+  padding-top:15px;
+}
+
+.paragraph {
+  font-size: 0.8rem;
+}
+
+.bottom {
+  margin-top: 40px;
+}

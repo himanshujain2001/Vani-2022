@@ -1,0 +1,29 @@
+/* Footer CSS */
+
+.footer {
+  background-color: #000000;
+  color: #fff;
+  padding-top:15px;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.scroll {
+  position: fixed;
+  bottom: 15px;
+  right: 10px;
+  z-index: 3;
+  cursor: pointer;
+  padding: 0;
+  outline: 0;
+  margin: 0;
+  border: none;
+  background: none;
+}
+
+.paragraph {
+  font-size: 0.8rem;
+}

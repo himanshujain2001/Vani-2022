@@ -1,0 +1,248 @@
+.headings1 {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.headings2 {
+  /* font-family: 'Lobster', cursive; */
+  font-family: 'Playfair Display', serif;
+}
+
+.top {
+  margin-top: 20px;
+}
+
+/* 2F8F9D */
+
+.form-control-dark {
+  color: #fff;
+  background-color: var(--bs-dark);
+  border-color: var(--bs-gray);
+}
+.form-control-dark:focus {
+  color: #fff;
+  background-color: var(--bs-dark);
+  border-color: #fff;
+  box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.text-small {
+  font-size: 85%;
+}
+
+.dropdown-toggle {
+  outline: 0;
+}
+
+.slider-left {
+  padding-right: 110px;
+}
+
+.slider-right {
+  padding-left: 110px;
+}
+
+.paragraph {
+  font-size: 0.8rem;
+}
+
+.paragraph1 {
+  margin-left: -990px;
+  margin-bottom: 200px;
+}
+
+.paragraph2 {
+  margin-bottom: 80px;
+  margin-left: 300px;
+  color: #000;
+}
+
+.heading1 {
+  text-align: left;
+  margin-bottom: 30px;
+  margin-left: -150px;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 60px;
+}
+
+.heading2 {
+  font-size: 3rem;
+  margin-bottom: 45px;
+  margin-left: 350px;
+  color: #000;
+}
+
+.heading3 {
+  text-align: right;
+  font-size: 3rem;
+  margin-bottom: 200px;
+  margin-left: 250px;
+  color: #fff;
+}
+
+.button {
+  margin-right: 10px;
+}
+
+.carousel .carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+}
+
+.indicators {
+  background-color: #000000;
+}
+
+/* 130f3f */
+
+.indicators1 {
+  background-color: #000000;
+}
+
+.carousel-indicators {
+  margin: 0;
+}
+
+/* .top {
+  margin-bottom: 10px;
+} */
+
+.top {
+  margin-top: 20px;
+}
+
+hr {
+  color: #e0665d;
+  background-color: #e0665d;
+  margin-left: 20px;
+}
+
+.list {
+  margin-left: 10px;
+  text-align: left;
+}
+
+i {
+  position: fixed;
+  bottom: 30px;
+  right: 40px;
+  cursor: pointer;
+  background-color: #0E4D92;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease-in-out;
+  border: 2px solid;
+  border-bottom-color: #ffffff;
+  z-index: 999;
+}
+
+i:hover {
+  color: #0096ff;
+  transition: 0.5s;
+}
+
+/* Middle section */
+
+.groomdiv {
+  margin: 20px 0;
+  height: 350px;
+}
+
+.groomheading {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  margin-top: 30px;
+  margin-left: 20px;
+  color: #a20a0a;
+}
+
+.groomimage {
+  /* position: absolute; */
+  /* margin-left: 600px; */
+  float: right;
+   /* margin: auto; */
+   margin-top: 20px;
+   margin-right: 90px;
+}
+
+.groompara {
+  text-align: left;
+  margin-left: 500px;
+  margin-top: 30px;
+  font-size: 30px;
+  color: #a20a0a;
+  line-height: 2;
+}
+
+.headingname {
+  margin-left: 550px;
+  color: #a20a0a;
+  font-size: 20px;
+}
+
+.bridediv {
+  margin: 20px 0;
+  height: 350px;
+  /* margin: 20px;
+  height: 200px; */
+  /* width: 50%; */
+  /* position: relative; */
+}
+
+.brideheading {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  margin-left: 20px;
+  color: #4e0005;
+}
+
+.brideimage {
+  /* position: absolute; */
+  /* margin-left: 600px; */
+  float: left;
+   /* margin: auto; */
+   margin-top: 20px;
+   margin-left: 90px;
+}
+
+/* Footer CSS */
+
+.footer {
+  background-color: #000000;
+  color: #fff;
+  padding-top:25px;
+}
+
+.contact {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.scroll {
+  position: fixed;
+  bottom: 15px;
+  right: 10px;
+  z-index: 3;
+  cursor: pointer;
+  padding: 0;
+  outline: 0;
+  margin: 0;
+  border: none;
+  background: none;
+}
