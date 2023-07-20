@@ -147,7 +147,26 @@ i:hover {
   transition: 0.5s;
 }
 
-/* Middle section */
+/* Middle Section */
+
+.preweddingdiv {
+  margin: 20px 0;
+  height: 600px;
+}
+
+.preweddingheading {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  margin-top: 30px;
+  margin-left: 20px;
+  color: #a20a0a;
+}
+
+.youtubevideo {
+  margin-left: 85px;
+}
+
+/* Bottom section */
 
 .groomdiv {
   margin: 20px 0;

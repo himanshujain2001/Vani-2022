@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 .bgcolor {
   background-color: #000000;
 }
@@ -38,12 +42,37 @@
 /* Contact Section */
 
 .contactSection {
-  margin-top: 10px;
-  margin-left: 30px;
+  margin-top: 30px;
 }
 
-.anchor {
-  margin-left: 550px;
+.contactMail {
+  display: flex;
+  height: 50px;
+  gap: 5px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactheading {
+  color: #fff95b;
+}
+
+.feedback {
+  color: #45caff;
+  animation: animate 1.5s linear infinite;
+}
+
+@keyframes animate{
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0.7;
+  }
+  100%{
+    opacity: 0;
+  }
 }
 
 /* Footer and Bottom to Top button */
