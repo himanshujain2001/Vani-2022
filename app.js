@@ -14,9 +14,17 @@ app.set('view engine', 'ejs');
 
 const date=new Date();
 var currentYear=date.getFullYear();
+let isAuthenticated = false;
+
+function isAuthenticatedMiddleware(req, res, next) {
+  if (isAuthenticated) {
+    return next(); // User is authenticated, continue to the next middleware/route
+  } else {
+    res.redirect("/login"); // User is not authenticated, redirect to the login page
+  }
+}
 
 // NavBar Routes
-
 app.get("/",function(req,res){
   res.render("home",{year:currentYear});
 });
@@ -29,40 +37,45 @@ app.get("/failure",function(req,res){
   res.render("failure");
 });
 
-app.get("/contact",function(req,res){
+app.get("/contact",(req,res) => {
   res.render("contact",{year:currentYear});
 });
 
 // Images Routes
-
-app.get("/haldi",function(req,res){
-  var files=fs.readdirSync(__dirname+"/public/haldiimages");
-   res.render("haldi",{year:currentYear,uploadHaldi:files});
+app.get("/haldi", isAuthenticatedMiddleware, (req,res) => {
+   var files=fs.readdirSync(__dirname+"/public/haldiimages");
+   var elementIndex=0;
+   res.render("haldi",{year:currentYear,uploadHaldi:files,index:elementIndex});
 });
 
-app.get("/mehndi",function(req,res){
+app.get("/mehndi", isAuthenticatedMiddleware, (req,res) => {
   var files=fs.readdirSync(__dirname+"/public/mehndiimages");
-   res.render("mehndi",{year:currentYear,uploadMehndi:files});
+  var elementIndex=0;
+   res.render("mehndi",{year:currentYear,uploadMehndi:files,index:elementIndex});
 });
 
-app.get("/reception",function(req,res){
+app.get("/reception", isAuthenticatedMiddleware, (req,res) => {
   var files=fs.readdirSync(__dirname+"/public/receptionimages");
-   res.render("reception",{year:currentYear,uploadReception:files});
+  var elementIndex=0;
+   res.render("reception",{year:currentYear,uploadReception:files,index:elementIndex});
 });
 
-app.get("/welcome",function(req,res){
+app.get("/welcome", isAuthenticatedMiddleware, (req,res) => {
   var files=fs.readdirSync(__dirname+"/public/welcomeimages");
-   res.render("welcome",{year:currentYear,uploadWelcome:files});
+  var elementIndex=0;
+   res.render("welcome",{year:currentYear,uploadWelcome:files,index:elementIndex});
 });
 
-app.get("/sangeet",function(req,res){
+app.get("/sangeet", isAuthenticatedMiddleware, (req,res) => {
   var files=fs.readdirSync(__dirname+"/public/sangeetimages");
-   res.render("sangeet",{year:currentYear,uploadSangeet:files});
+  var elementIndex=0;
+   res.render("sangeet",{year:currentYear,uploadSangeet:files,index:elementIndex});
 });
 
-app.get("/nikasi",function(req,res){
+app.get("/nikasi", isAuthenticatedMiddleware, (req,res) => {
   var files=fs.readdirSync(__dirname+"/public/nikasiimages");
-   res.render("nikasi",{year:currentYear,uploadNikasi:files});
+  var elementIndex=0;
+   res.render("nikasi",{year:currentYear,uploadNikasi:files,index:elementIndex});
 });
 
 app.post("/failure",function(req,res){
@@ -74,9 +87,11 @@ app.post("/login",function(req,res){
   const pass=req.body.pswd;
 
   if(userId===process.env.login_username && pass===process.env.login_password){
+     isAuthenticated = true;
      res.render("gallery",{year:currentYear});
    }
   else{
+    isAuthenticated = false;
     res.render("failure");
   }
 });

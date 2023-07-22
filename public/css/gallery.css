@@ -7,6 +7,14 @@
   margin-bottom: 10px;
 }
 
+.middle {
+  margin-bottom: 10px;
+}
+
+.bottomcards {
+  margin-bottom: 20px;
+}
+
 /* Cards Heading */
 
 .title1 {
@@ -56,7 +64,7 @@ font-family: 'Roboto Mono', monospace; */
   text-align: center;
   color: #A20A0A;
   font-family: 'Dancing Script', cursive;
-  font-size: 2rem;
+  font-size: 1.9rem;
   padding: 5px 0 5px 0;
 }
 
@@ -93,7 +101,7 @@ font-family: 'Roboto Mono', monospace; */
 
 .haldibutton {
   margin-left: 60px;
-  margin-top: 20px;
+  margin-top: 30px;
   color: #fff;
 }
 
@@ -103,12 +111,13 @@ font-family: 'Roboto Mono', monospace; */
 
 .mehndibutton {
   margin-left: 60px;
-  margin-top: 15px;
+  margin-top: 25px;
   color: #fff;
 }
 
 .sangeetbutton {
   margin-left: 60px;
+  margin-top: 27px;
   background-color: #ECB390;
   color: #fff;
 }
@@ -119,7 +128,7 @@ font-family: 'Roboto Mono', monospace; */
 
 .receptnbutton {
   margin-left: 60px;
-  margin-top: 70px;
+  margin-top: 36px;
   background-color: #A20A0A;
   color: #fff;
 }
@@ -130,7 +139,7 @@ font-family: 'Roboto Mono', monospace; */
 
 .welcomebutton {
   margin-left: 60px;
-  margin-top: 22px;
+  margin-top: 38px;
   background-color: #A13333;
   color: #fff;
 }
@@ -141,7 +150,7 @@ font-family: 'Roboto Mono', monospace; */
 
 .nikasibutton {
   margin-left: 60px;
-  margin-top: 22px;
+  margin-top: 36px;
   background-color: #A10035;
   color: #fff;
 }
