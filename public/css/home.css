@@ -315,7 +315,7 @@ i:hover {
 @media (max-width: 767px) {
 
   .topsection {
-    width: 100vw;
+    width: 100%;
   }
 
   .groomdiv {
@@ -372,10 +372,6 @@ i:hover {
     font-size: 35px;
   }
 
-  .carousel-item {
-    width: 100vw;
-  }
-
   .typingCursor {
     white-space: nowrap;
     overflow: hidden;
@@ -386,7 +382,7 @@ i:hover {
 
   @keyframes typewriter {
     from { width: 0%;}
-    to { width: 75%;}
+    to { width: 100%;}
   }
 
   @keyframes blink {
