@@ -43,39 +43,46 @@ app.get("/contact",(req,res) => {
 
 // Images Routes
 app.get("/haldi", isAuthenticatedMiddleware, (req,res) => {
-   var files=fs.readdirSync(__dirname+"/public/haldiimages");
-   var elementIndex=0;
-   res.render("haldi",{year:currentYear,uploadHaldi:files,index:elementIndex});
+   // var files=fs.readdirSync(__dirname+"/public/haldiimages");
+   var elementStartFirst=process.env.imageStartFirst;
+   var elementEndFirst=process.env.imageEndFirst;
+   var imageLinkFirst=process.env.linkFirst;
+   res.render("haldi",{year:currentYear,imgLink:imageLinkFirst,imageStartIndex:elementStartFirst,imageEndIndex:elementEndFirst});
 });
 
 app.get("/mehndi", isAuthenticatedMiddleware, (req,res) => {
-  var files=fs.readdirSync(__dirname+"/public/mehndiimages");
-  var elementIndex=0;
-   res.render("mehndi",{year:currentYear,uploadMehndi:files,index:elementIndex});
-});
-
-app.get("/reception", isAuthenticatedMiddleware, (req,res) => {
-  var files=fs.readdirSync(__dirname+"/public/receptionimages");
-  var elementIndex=0;
-   res.render("reception",{year:currentYear,uploadReception:files,index:elementIndex});
-});
-
-app.get("/welcome", isAuthenticatedMiddleware, (req,res) => {
-  var files=fs.readdirSync(__dirname+"/public/welcomeimages");
-  var elementIndex=0;
-   res.render("welcome",{year:currentYear,uploadWelcome:files,index:elementIndex});
+  var elementStartSecond=process.env.imageStartSecond;
+  var elementEndSecond=process.env.imageEndSecond;
+  var imageLinkSecond=process.env.linkFirst;
+   res.render("mehndi",{year:currentYear,imgLink:imageLinkSecond,imageStartIndex:elementStartSecond,imageEndIndex:elementEndSecond});
 });
 
 app.get("/sangeet", isAuthenticatedMiddleware, (req,res) => {
-  var files=fs.readdirSync(__dirname+"/public/sangeetimages");
-  var elementIndex=0;
-   res.render("sangeet",{year:currentYear,uploadSangeet:files,index:elementIndex});
+  var elementStartThird=process.env.imageStartThird;
+  var elementEndThird=process.env.imageEndThird;
+  var imageLinkThird=process.env.linkFifth;
+   res.render("sangeet",{year:currentYear,imgLink:imageLinkThird,imageStartIndex:elementStartThird,imageEndIndex:elementEndThird});
+});
+
+app.get("/reception", isAuthenticatedMiddleware, (req,res) => {
+  var elementStartFourth=process.env.imageStartFourth;
+  var elementEndFourth=process.env.imageEndFourth;
+  var imageLinkFourth=process.env.linkFourth;
+   res.render("reception",{year:currentYear,imgLink:imageLinkFourth,imageStartIndex:elementStartFourth,imageEndIndex:elementEndFourth});
+});
+
+app.get("/welcome", isAuthenticatedMiddleware, (req,res) => {
+  var elementStartFifth=process.env.imageStartFifth;
+  var elementEndFifth=process.env.imageEndFifth;
+  var imageLinkFifth=process.env.linkFifth;
+   res.render("welcome",{year:currentYear,imgLink:imageLinkFifth,imageStartIndex:elementStartFifth,imageEndIndex:elementEndFifth});
 });
 
 app.get("/nikasi", isAuthenticatedMiddleware, (req,res) => {
-  var files=fs.readdirSync(__dirname+"/public/nikasiimages");
-  var elementIndex=0;
-   res.render("nikasi",{year:currentYear,uploadNikasi:files,index:elementIndex});
+  var elementStartSixth=process.env.imageStartSixth;
+  var elementEndSixth=process.env.imageEndSixth;
+  var imageLinkSixth = process.env.linkSixth;
+    res.render("nikasi",{year:currentYear,imgLink:imageLinkSixth,imageStartIndex:elementStartSixth,imageEndIndex:elementEndSixth});
 });
 
 app.post("/failure",function(req,res){
@@ -96,7 +103,7 @@ app.post("/login",function(req,res){
   }
 });
 
-let port = process.env.PORT || 3000;
+let port = process.env.PORT;
 
 app.listen(port,function(){
   console.log("Server is running on port "+port);

@@ -1,4 +1,12 @@
-/* Loader */
+body {
+  overflow-x: hidden;
+}
+
+/* Lazy Loading Functionality */
+
+.imageGallery-hidden {
+      display: none;
+}
 
 .container {
   position: relative;
@@ -8,6 +16,10 @@
 hr {
   color: #efa601;
 }
+
+/* .hover-shadow:hover {
+  box-shadow: 0 0 30px rgba(33,33,33,.2);
+} */
 
 /* Expanding image text */
 #imgtext {
@@ -108,21 +120,6 @@ hr {
   cursor: pointer;
 }
 
-#loaderId {
-  background: #fff url(/images/loading.gif) no-repeat center center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 9999999;
-}
-
-.wait {
-  text-align: center;
-  margin-top: 350px;
-}
-
 /* Image Section */
 
 .imageDiv {
@@ -157,38 +154,6 @@ hr {
   padding-left: 70px;
   background-color: #fff;
   margin-bottom: 20px;
-}
-
-/* Footer CSS */
-
-.footer {
-  background-color: #000000;
-  color: #fff;
-  padding-top: 9px;
-  margin-top: 1px;
-}
-
-.img-fluid {
-  max-width: 100%;
-  height: auto;
-}
-
-.scroll {
-  position: fixed;
-  bottom: 15px;
-  right: 10px;
-  z-index: 3;
-  cursor: pointer;
-  padding: 0;
-  outline: 0;
-  margin: 0;
-  border: none;
-  background: none;
-}
-
-.paragraph {
-  margin-top: 2px;
-  font-size: 0.8rem;
 }
 
 /* Style the Image Used to Trigger the Modal */
@@ -269,7 +234,12 @@ hr {
 }
 
 /* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 767px){
+
+  .imageSection {
+      margin-top: 20%;
+  }
+
   .modal-content {
     width: 100%;
   }

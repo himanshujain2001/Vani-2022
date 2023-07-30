@@ -1,15 +1,37 @@
 <link rel="stylesheet" href="css/header.css">
-<div class="container-fluid bgcolor fixed-top">
-    <header class="d-flex flex-wrap justify-content-center py-3 border-bottom">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
-        <img class="ms-2" src="images/tsp-174-modified.png" alt="" width="40" height="40">
-      </a>
 
-      <ul class="nav col-12 col-lg-auto">
-        <li><a href="/" class="nav-link px-2 text-white me-4 hover-underline-animation">Home</a></li>
-        <li><a href="#" class="nav-link px-2 text-white me-4 hover-underline-animation">Our Story</a></li>
-        <li><a href="/login" class="nav-link px-2 text-white me-4 hover-underline-animation">Gallery</a></li>
-        <li><a href="/contact" class="nav-link px-2 text-white me-4 hover-underline-animation">Contact</a></li>
+<!-- Add the responsive Navbar code here -->
+<nav class="navbar navbar-expand-md bgcolor fixed-top py-3 border-bottom">
+  <div class="container">
+    <a href="/" class="navbar-brand d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
+      <img src="images/tsp-174-modified.png" alt="Logo" width="40" height="40">
+    </a>
+
+    <!-- Responsive button where each span tag denotes each line -->
+    <button class="navbar-toggler navbutton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon navline"></span>
+      <span class="navbar-toggler-icon navline"></span>
+      <span class="navbar-toggler-icon navline"></span>
+      <span></span>
+    </button>
+
+    <!-- Add the Navbar items and set their alignment -->
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <ul class="navbar-nav col-12 col-lg-auto ms-auto">
+        <li class="nav-item">
+          <a href="/" class="nav-link text-white me-4 hover-underline-animation">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-white me-4 hover-underline-animation">Our Story</a>
+        </li>
+        <li class="nav-item">
+          <a href="/login" class="nav-link text-white me-4 hover-underline-animation">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a href="/contact" class="nav-link text-white me-4 hover-underline-animation">Contact</a>
+        </li>
+        <!-- Add more navigation links here -->
       </ul>
-    </header>
+    </div>
   </div>
+</nav>

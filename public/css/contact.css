@@ -6,43 +6,36 @@ body {
   background-color: #000000;
 }
 
-/* Underline effect in header */
-.hover-underline-animation {
-  display: inline-block;
-  position: relative;
-  color:#fff;
-}
-
-.hover-underline-animation:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 1.5px;
-  bottom: 0;
-  left: 0;
-  background-color:#fff;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-
-.hover-underline-animation:hover:after {
-  transform: scaleX(1);
-  transform-origin: bottom;
-}
-
 /* Middle Section */
 
-.cards {
+.topcards {
   justify-content: center;
   text-align: center;
   margin-top: 10rem;
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-around; */
+}
+
+.bottomcards {
+  justify-content: center;
+  text-align: center;
+  margin-top: 10rem;
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-around; */
+}
+
+.contactcards {
+  display: flex;
+  justify-content: space-around;
 }
 
 /* Contact Section */
 
 .contactSection {
-  margin-top: 30px;
+  margin-top: 40px;
+  margin-bottom: 15px;
 }
 
 .contactMail {
@@ -54,8 +47,14 @@ body {
   justify-content: center;
 }
 
+.contactbgcolor {
+  background-color: #91C8E4;
+  width: 100vw;
+}
+
 .contactheading {
-  color: #fff95b;
+  color: #fff;
+  font-weight: normal;
 }
 
 .feedback {
@@ -75,18 +74,37 @@ body {
   }
 }
 
-/* Footer and Bottom to Top button */
-
-.footer {
-  background-color: #000000;
-  color: #fff;
-  padding-top:15px;
+.scrollingtext {
+  position: relative;
+  animation: rightToLeft 40s infinite;
 }
 
-.paragraph {
-  font-size: 0.8rem;
+@keyframes rightToLeft {
+  from {right:-100%}
+  to {right:1000px;}
 }
 
-.bottom {
-  margin-top: 40px;
+@media (max-width: 767px) {
+  .contactcards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4%;
+  }
+
+  .responsivecard {
+    margin-bottom: 20%;
+  }
+
+  .middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4%;
+  }
+
+  .bottomcards {
+    margin-top: 1%;
+  }
+
 }

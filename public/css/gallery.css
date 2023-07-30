@@ -12,7 +12,7 @@
 }
 
 .bottomcards {
-  margin-bottom: 20px;
+  margin-bottom: 80px;
 }
 
 /* Cards Heading */
@@ -191,4 +191,32 @@ font-family: 'Roboto Mono', monospace; */
 
 .paragraph {
   font-size: 0.8rem;
+}
+
+@media (max-width: 767px) {
+  .cardcontainer {
+    display: flex;
+    flex-direction:column;
+    gap: 5%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .eachcard {
+    margin-bottom: 10%;
+  }
+
+  .bottomcards {
+    display: flex;
+    flex-direction:column;
+    gap: 5%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .middle {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+  }
 }

@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vani</title>
 
 <!-- Font Family -->
@@ -27,7 +28,7 @@
 
     <%- include('partials/header') %>
 
-<section class="top">
+<section class="topsection">
 
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
 <div class="indicators carousel-indicators">
@@ -40,9 +41,9 @@
 <div class="carousel-inner">
 <div class="carousel-item active">
   <img src="images/tsp-639.jpg" loading="lazy" class="d-block w-100" height="590px" alt="...">
-  <div class="carousel-caption d-none d-md-block">
-    <h3 class="headings1 heading1">10 April 2022</h3>
-    <h1 class="headings2 heading1"> Vaibhav & Saloni</h1>
+  <div class="carousel-caption d-md-block responsivediv">
+    <h3 class="headings1 heading1 typingCursor responsivetext">10 April 2022</h3>
+    <h1 class="headings2 heading1 responsivetext"> Vaibhav & Saloni</h1>
   </div>
 </div>
 <div class="carousel-item">
@@ -79,26 +80,75 @@
 </section>
 
 <section class="middle">
-  <div class="preweddingdiv">
+  <div class="preweddingdiv embed-responsive embed-responsive-16by9">
     <h1 class="preweddingheading">Pre-Wedding</h1><hr>
-    <iframe class="youtubevideo" width="1070px" height="500px" src="https://www.youtube.com/embed/h_5d0ZUaF3I?playlist=h_5d0ZUaF3I&loop=1&rel=0" allowfullscreen"></iframe>
+    <iframe class="youtubevideo embed-responsive-item" width="1070px" height="500px" src="https://www.youtube.com/embed/h_5d0ZUaF3I?playlist=h_5d0ZUaF3I&loop=1&rel=0" allowfullscreen></iframe>
   </div>
 </section>
 
 <section class="bottom">
-  <div class="groomdiv">
+  <div class="groomdiv" id="groomDiv">
     <h1 class="groomheading">Words By Bride & Groom</h1><hr>
     <img class="groomimage" src="images/groom_middle.png" width="240px" alt="middlegroom">
     <p class="groompara">" तेरी मेरी बातों की <br>तेरी बातों की मुलाक़ातों की <br>भीगी-भीगी रातों की <br>मैंने लिख दी ये कहानी "</p>
-    <h6 class="headingname">- CA Vaibhav Jain</h6>
+    <h6 class="headingname groompara">- CA Vaibhav Jain</h6>
   </div>
-  <div class="bridediv">
+  <div class="bridediv" id="brideDiv">
     <!-- <h1 class="brideheading">Words From Bride</h1><hr> -->
     <img class="brideimage" src="images/bride_middle.png" width="230px" alt="middlebride">
+    <p class="bridepara">Couldn't get content from bride.<br>Ask our bride for this</p>
   </div>
 </section>
 
 <%- include('partials/footer') %>
+
+<script>
+  // JavaScript to add animation when the "bridediv" is in the viewport
+  function animateBrideDiv(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        var bridediv = entry.target;
+        // Add a delay of 1 second before starting the animation
+       setTimeout(function () {
+         bridediv.style.opacity = '1';
+         bridediv.style.transform = 'translateX(0)';
+       }, 200);
+
+       observer.unobserve(bridediv); // Stop observing once the animation is triggered
+      }
+    });
+  }
+
+  // Create the Intersection Observer
+  var observer = new IntersectionObserver(animateBrideDiv, { threshold: 0.5 });
+
+  // Start observing the "bridediv"
+  var bridediv = document.getElementById('brideDiv');
+  observer.observe(bridediv);
+
+  // JavaScript to add animation when the "bridediv" is in the viewport
+  function animateGroomDiv(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        var groomdiv = entry.target;
+        // Add a delay of 1 second before starting the animation
+       setTimeout(function () {
+         groomdiv.style.opacity = '1';
+         groomdiv.style.transform = 'translateX(0)';
+       }, 200);
+
+       observer.unobserve(groomdiv); // Stop observing once the animation is triggered
+      }
+    });
+  }
+
+  var observer = new IntersectionObserver(animateGroomDiv, { threshold: 0.5 });
+
+  // Start observing the "bridediv"
+  var groomdiv = document.getElementById('groomDiv');
+  observer.observe(groomdiv);
+
+</script>
 
   </body>
 </html>

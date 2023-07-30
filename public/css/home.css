@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 .headings1 {
   font-family: 'Roboto Mono', monospace;
 }
@@ -7,8 +11,9 @@
   font-family: 'Playfair Display', serif;
 }
 
-.top {
+.topsection {
   margin-top: 20px;
+  width: 100vw;
 }
 
 /* 2F8F9D */
@@ -18,6 +23,7 @@
   background-color: var(--bs-dark);
   border-color: var(--bs-gray);
 }
+
 .form-control-dark:focus {
   color: #fff;
   background-color: var(--bs-dark);
@@ -64,7 +70,7 @@
 .heading1 {
   text-align: left;
   margin-bottom: 30px;
-  margin-left: -150px;
+  /* margin-left: -150px; */
   font-size: 50px;
   font-weight: 700;
   line-height: 60px;
@@ -73,7 +79,7 @@
 .heading2 {
   font-size: 3rem;
   margin-bottom: 45px;
-  margin-left: 350px;
+  /* margin-left: 350px; */
   color: #000;
 }
 
@@ -147,10 +153,28 @@ i:hover {
   transition: 0.5s;
 }
 
+.typingCursor {
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typewriter 2s steps(20) 1s 1 normal both,
+  blink 2000ms steps(20) infinite normal;
+  border-right: 6px solid #fff;
+}
+
+@keyframes typewriter {
+  from { width: 0%;}
+  to { width: 37%;}
+}
+
+@keyframes blink {
+  from { border-color: #fff;}
+  to { border-color: transparent;}
+}
+
 /* Middle Section */
 
 .preweddingdiv {
-  margin: 20px 0;
+  margin: 30px 0;
   height: 600px;
 }
 
@@ -163,14 +187,18 @@ i:hover {
 }
 
 .youtubevideo {
-  margin-left: 85px;
+  margin-left: 8%;
 }
 
 /* Bottom section */
 
 .groomdiv {
   margin: 20px 0;
-  height: 350px;
+  overflow: hidden;
+  width: 100vw;
+  opacity: 0; /* Hide the div initially */
+  transform: translateX(50px); /* Move the div to the left initially */
+  transition: opacity 1s ease, transform 1s ease; /* Add transition for smooth animation */
 }
 
 .groomheading {
@@ -182,13 +210,20 @@ i:hover {
 }
 
 .groomimage {
+  float: right;
+  margin-top: 20px;
+  margin-right: 90px;
   /* position: absolute; */
   /* margin-left: 600px; */
-  float: right;
    /* margin: auto; */
-   margin-top: 20px;
-   margin-right: 90px;
+   /* position: relative;
+   animation: fromRightToLeft 5s infinite; */
 }
+
+/* @keyframes fromRightToLeft {
+  from {right: -100%;}
+  to {right: 100px;}
+} */
 
 .groompara {
   text-align: left;
@@ -197,7 +232,14 @@ i:hover {
   font-size: 30px;
   color: #a20a0a;
   line-height: 2;
+  /* position: relative;
+  animation: slideFromLeftToCenter 5s infinite; */
 }
+
+/* @keyframes slideFromLeftToCenter {
+  from {left: -100%;}
+  to {left: 15px;}
+} */
 
 .headingname {
   margin-left: 550px;
@@ -207,12 +249,55 @@ i:hover {
 
 .bridediv {
   margin: 20px 0;
-  height: 350px;
+  margin-top: 50px;
+  height: 300px;
+  width: 100vw;
+  overflow: hidden;
+  opacity: 0; /* Hide the div initially */
+  transform: translateX(-50px); /* Move the div to the left initially */
+  transition: opacity 1s ease, transform 1s ease; /* Add transition for smooth animation */
+  /* width: 800px; */
+  /* position: relative; */
   /* margin: 20px;
   height: 200px; */
   /* width: 50%; */
-  /* position: relative; */
 }
+
+.bridepara {
+  margin-top: 30px;
+  font-size: 30px;
+  color: #4e0005;
+  text-align: left;
+  line-height: 2;
+  margin-left: 50px;
+  /* position: absolute; */
+  /* top: 0; */
+  /* right: -100%;
+  animation: slideFromRightToCenter 5s infinite; */
+}
+
+/* @keyframes slideFromRightToCenter {
+  from {right: -100%;}
+  to {right: 350px;}
+} */
+
+.brideimage {
+   float: left;
+   margin-top: 20px;
+   margin-left: 90px;
+   margin-right: 130px;
+   /* position: absolute; */
+   /* margin-left: 600px; */
+   /* margin: auto; */
+   /* position: absolute;
+   left: -100%;
+   animation: fromLeftToRight 5s infinite; */
+}
+
+/* @keyframes fromLeftToRight {
+  from {left: -100%;}
+  to {left: 100px;}
+} */
 
 .brideheading {
   font-family: 'Dancing Script', cursive;
@@ -221,47 +306,83 @@ i:hover {
   color: #4e0005;
 }
 
-.brideimage {
-  /* position: absolute; */
-  /* margin-left: 600px; */
-  float: left;
-   /* margin: auto; */
-   margin-top: 20px;
-   margin-left: 90px;
+/* To adjust first carousal text to left as this call have by default left margin of 15% */
+.carousel-caption {
+  left: 7%;
 }
 
-/* Footer CSS */
+/* Responsive Design */
+@media (max-width: 767px) {
 
-.footer {
-  background-color: #000000;
-  color: #fff;
-  padding-top:25px;
-}
+  .topsection {
+    width: 100vw;
+  }
 
-.contact {
-  color: #fff;
-  text-decoration: none;
-}
+  .groomdiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
 
-.contact:hover {
-  text-decoration: underline;
-  color: #fff;
-}
+  .groomimage {
+    float: none;
+    margin: 0 auto; /* Center the image */
+  }
 
-.img-fluid {
-  max-width: 100%;
-  height: auto;
-}
+  .groompara {
+    text-align: left;
+    margin: 30px;
+  }
 
-.scroll {
-  position: fixed;
-  bottom: 15px;
-  right: 10px;
-  z-index: 3;
-  cursor: pointer;
-  padding: 0;
-  outline: 0;
-  margin: 0;
-  border: none;
-  background: none;
+  .bridediv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .brideimage {
+    float: none;
+    margin: 0 auto; /* Center the image */
+  }
+
+  .bridepara {
+    text-align: left;
+    margin: 30px;
+  }
+
+  .preweddingdiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .youtubevideo {
+    width: 80%;
+  }
+
+/* To make carousal slider buttons fit to screen for smaller screen */
+
+  .slider-left, .slider-right {
+    padding: 0px;
+  }
+
+  .typingCursor {
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typewriter 2s steps(20) 1s 1 normal both,
+    blink 2000ms steps(20) infinite normal;
+    border-right: 6px solid #fff;
+  }
+
+  @keyframes typewriter {
+    from { width: 0%;}
+    to { width: 95%;}
+  }
+
+  @keyframes blink {
+    from { border-color: #fff;}
+    to { border-color: transparent;}
+  }
 }

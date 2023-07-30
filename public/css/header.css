@@ -2,6 +2,22 @@
   background-color: #000000;
 }
 
+/* Responsive nav button */
+.navbutton {
+  background-color: #000000;
+  text-decoration-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+span.navline {
+  /* color: #fff; */
+  margin-top: 5%;
+  height: 2px;
+  background-color: #fff;
+}
+
 /* Underline effect in header */
 .hover-underline-animation {
   display: inline-block;
@@ -26,3 +42,9 @@
   transform: scaleX(1);
   transform-origin: bottom;
 }
+
+/*
+@media (max-width: 767px) {
+
+
+} */

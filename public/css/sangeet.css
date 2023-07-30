@@ -1,22 +1,15 @@
-/* Loader */
+body {
+  overflow-x: hidden;
+}
 
-#loaderId {
-  background: #fff url(/images/loading.gif) no-repeat center center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 9999999;
+/* Lazy Loading Functionality */
+
+.imageGallery-hidden {
+      display: none;
 }
 
 hr {
   color: #ECB390;
-}
-
-.wait {
-  text-align: center;
-  margin-top: 350px;
 }
 
 /* Image Section */
@@ -165,7 +158,11 @@ hr {
 }
 
 /* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 767px){
+  .imageSection {
+      margin-top: 20%;
+  }
+
   .modal-content {
     width: 100%;
   }

@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HaldiImages</title>
 
     <!-- Font Family -->
@@ -24,99 +25,105 @@
     <link rel="icon" href="images/tsp-174-modified.png">
   </head>
   <body>
-<div id="loaderId">
+<!-- <div id="loaderId">
   <p class="wait">Please Wait...</p>
   <div></div>
-</div>
+</div> -->
+
+
     <%- include('partials/header') %>
 
-  <div class="imageSection container-fluid">
+  <div class="imageSection container-fluid" id="imageGallery">
        <h1 class="heading">Haldi Images</h1> <hr>
-     <% uploadHaldi.forEach(function(imageToUpload,index){ %>
+     <% for(let i=imageStartIndex;i<=imageEndIndex;i++) { %>
        <div class="imageDiv">
        <!-- <div class="imageDiv col-12 col-sm-6 col-lg-2" id="gallery" data-toggle="modal" data-target="#exampleModal"> -->
-        <img class="haldiImages" id="myImg<%= index %>" src="haldiimages/<%=imageToUpload%>" loading="lazy" alt="Haldi">
+        <img class="haldiImages" id="myImg<%= i %>" src="<%= imgLink %><%= i %>.jpeg" loading="lazy" alt="Haldi">
 
          <!-- The Modal -->
-         <div id="myModal<%= index %>" class="modal">
+         <div id="myModal<%= i %>" class="modal">
 
           <!-- The Close Button -->
-          <span class="close" data-index="<%= index %>">&times;</span>
+          <span class="close" data-index="<%= i %>">&times;</span>
 
           <!-- Modal Content (The Image) -->
-          <img class="modal-content" id="img01<%= index %>">
+          <img class="modal-content" id="img01<%= i %>">
 
           <!-- Modal Caption (Image Text) -->
-          <div id="caption<%= index %>"></div>
+          <div id="caption<%= i %>"></div>
          </div>
      </div>
-     <% }); %>
+     <% } %>
   </div>
 
     <!-- Footer -->
-    <section class="footer">
-
-    <div class="footer">
-      <div class="container-fluid">
-    <div class="row">
-
-      <div class="col-lg-4 paragraph">
-        <p>Copyright © <%=year%> Vani. All Rights Reserved</p>
-      </div>
-
-      <div class="col-lg-4 paragraph">
-        <p>Website designed, developed & hosted by <br>HIMANSHU JAIN</p>
-      </div>
-
-      <div class="col-lg-2 paragraph">
-        <p>Terms of Service</p>
-      </div>
-      <div class="col-lg-2 paragraph">
-        <p>Privacy Policy</p>
-      </div>
-      <div class="col-lg-2 paragraph">
-        <button onclick="topFunction()" type="" class="scroll" name="button">
-          <img src="https://www.cowin.gov.in/assets/images/scroll-top.svg" class="img-fluid" alt="">
-        </button>
-      </div>
-      </div>
-    </div>
-
-    </div>
-
-    </section>
+    <%- include('partials/footer') %>
 
     <script>
 
-      // Functionality for Scroll to top button
-      function topFunction() {
-      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    }
-
-    // Loader
-    var loader=document.getElementById("loaderId");
-    window.addEventListener("load",function(){
-      loader.style.display="none";
-    });
+    // // Loader
+    // var loader=document.getElementById("loaderId");
+    // window.addEventListener("load",function(){
+    //   loader.style.display="none";
+    // });
 
           // Get the modal
-          <% uploadHaldi.forEach(function(imageToUpload, index){ %>
-            var modal<%= index %> = document.getElementById("myModal<%= index %>");
-            var img<%= index %> = document.getElementById("myImg<%= index %>");
-            var modalImg<%= index %> = document.getElementById("img01<%= index %>");
-            var captionText<%= index %> = document.getElementById("caption<%= index %>");
+          <% for(let i=imageStartIndex;i<=imageEndIndex;i++) { %>
+           (function() {
+              var modal<%= i %> = document.getElementById("myModal<%= i %>");
+              var img<%= i %> = document.getElementById("myImg<%= i %>");
+              var modalImg<%= i %> = document.getElementById("img01<%= i %>");
+              var captionText<%= i %> = document.getElementById("caption<%= i %>");
 
-            img<%= index %>.onclick = function(){
-              modal<%= index %>.style.display = "block";
-              modalImg<%= index %>.src = this.src;
-              captionText<%= index %>.innerHTML = this.alt;
-            }
+              img<%= i %>.onclick = function(){
+                modal<%= i %>.style.display = "block";
+                modalImg<%= i %>.src = this.src;
+                captionText<%= i %>.innerHTML = this.alt;
+              }
 
-            var span<%= index %> = document.getElementsByClassName("close")[<%= index %>];
-            span<%= index %>.onclick = function() {
-              modal<%= index %>.style.display = "none";
-            }
-          <% }); %>
+              var span<%= i %> = document.getElementsByClassName("close")[<%= i-imageStartIndex %>];
+              span<%= i %>.onclick = function() {
+                modal<%= i %>.style.display = "none";
+              };
+            })();
+          <% } %>
+
+          // Function to lazy-load images as the user scrolls
+          // function lazyLoadImages() {
+          //   const imageElements = document.querySelectorAll('.lazy-load');
+          //    let loadedImages = 0;
+          //
+          //   imageElements.forEach((img) => {
+          //     const rect = img.getBoundingClientRect();
+          //     if (rect.top >= 0 && rect.top <= window.innerHeight) {
+          //       img.src = img.getAttribute('data-src');
+          //       img.classList.remove('lazy-load');
+          //       loadedImages++;
+          //     }
+          //   });
+          //
+          //   // Check if all images are loaded
+          //   if (loadedImages === imageElements.length) {
+          //     // Remove the loading screen and show the image gallery
+          //     document.getElementById('loaderId').style.display = 'none';
+          //     document.getElementById('imageGallery').classList.remove('imageGallery-hidden');
+          //     // Remove the scroll event listener since all images are loaded
+          //     window.removeEventListener('scroll', lazyLoadImages);
+          //   }
+          // }
+          //
+          //   // Show the loading screen initially
+          //   document.getElementById('imageGallery').classList.add('imageGallery-hidden');
+          //
+          //   // Wait for the DOM to be ready
+          //   document.addEventListener('DOMContentLoaded', () => {
+          //   // Load initial images
+          //   lazyLoadImages();
+          //
+          //   // Add event listener for scrolling to load more images
+          //   window.addEventListener('scroll', lazyLoadImages);
+          //
+          // });
     </script>
 
   </body>
