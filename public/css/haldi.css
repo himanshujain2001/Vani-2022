@@ -240,14 +240,14 @@ hr {
   }
 
   .modal-content {
-    width: 95%;
+    width: 90%;
     height: 100%;
   }
 
   .close {
     position: absolute;
-    top: 13%;
-    right: 0.2%;
+    top: 9%;
+    right: 0.1%;
     color: #f1f1f1;
     font-size: 40px;
     font-weight: bold;
