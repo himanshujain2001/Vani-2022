@@ -368,6 +368,10 @@ i:hover {
     padding: 0px;
   }
 
+  .responsivetext {
+    font-size: 35px;
+  }
+
   .typingCursor {
     white-space: nowrap;
     overflow: hidden;
@@ -378,7 +382,7 @@ i:hover {
 
   @keyframes typewriter {
     from { width: 0%;}
-    to { width: 95%;}
+    to { width: 68%;}
   }
 
   @keyframes blink {
