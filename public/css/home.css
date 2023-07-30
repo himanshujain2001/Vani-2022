@@ -306,7 +306,7 @@ i:hover {
   color: #4e0005;
 }
 
-/* To adjust first carousal text to left as this call have by default left margin of 15% */
+/* To adjust first carousel text to left as this call have by default left margin of 15% */
 .carousel-caption {
   left: 7%;
 }
@@ -362,7 +362,7 @@ i:hover {
     width: 80%;
   }
 
-/* To make carousal slider buttons fit to screen for smaller screen */
+/* To make carousel slider buttons fit to screen for smaller screen */
 
   .slider-left, .slider-right {
     padding: 0px;
@@ -370,6 +370,10 @@ i:hover {
 
   .responsivetext {
     font-size: 35px;
+  }
+
+  .carousel-item {
+    width: 100vw;
   }
 
   .typingCursor {
@@ -382,7 +386,7 @@ i:hover {
 
   @keyframes typewriter {
     from { width: 0%;}
-    to { width: 68%;}
+    to { width: 75%;}
   }
 
   @keyframes blink {
