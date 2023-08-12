@@ -6,6 +6,7 @@ const app=express();
 const bodyParser=require("body-parser");
 const ejs=require("ejs");
 const fs=require("fs");
+const axios = require("axios");
 
 app.use(bodyParser.urlencoded({extended:true}));
 
@@ -30,7 +31,8 @@ app.get("/",function(req,res){
 });
 
 app.get("/login",function(req,res){
-  res.render("login",{year:currentYear});
+  var siteKey = process.env.siteKey;
+  res.render("login",{year:currentYear, key: siteKey});
 });
 
 app.get("/failure",function(req,res){
@@ -89,18 +91,50 @@ app.post("/failure",function(req,res){
   res.redirect("login");
 });
 
-app.post("/login",function(req,res){
-  const userId=req.body.username;
-  const pass=req.body.pswd;
+app.post("/login", (req,res) => {
+  // const userId=req.body.username;
+  // const pass=req.body.pswd;
+  //
+  // if(userId===process.env.login_username && pass===process.env.login_password){
+  //    isAuthenticated = true;
+  //    res.render("gallery",{year:currentYear});
+  //  }
+  // else{
+  //   isAuthenticated = false;
+  //   res.render("failure");
+  // }
+   
+   const userId = req.body.username;
+   const pass = req.body.pswd;
+   const recaptchaResponse = req.body['g-recaptcha-response']; // Get reCAPTCHA response
 
-  if(userId===process.env.login_username && pass===process.env.login_password){
-     isAuthenticated = true;
-     res.render("gallery",{year:currentYear});
-   }
-  else{
-    isAuthenticated = false;
-    res.render("failure");
-  }
+   const recaptchaSecretKey = process.env.secretKey;
+
+   // Verify reCAPTCHA using axios
+   axios.post(
+       `https://www.google.com/recaptcha/api/siteverify`,
+       `secret=${recaptchaSecretKey}&response=${recaptchaResponse}`,
+       { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
+   )
+   .then(response => response.data)
+   .then(recaptchaData => {
+       if (recaptchaData.success) {
+           if (userId === process.env.login_username && pass === process.env.login_password) {
+               isAuthenticated = true;
+               res.render("gallery", { year: currentYear });
+           } else {
+               isAuthenticated = false;
+               res.render("failure");
+           }
+       } else {
+           // CAPTCHA challenge not passed, handle accordingly
+           res.render("failure");
+       }
+   })
+   .catch(error => {
+       console.error('Error verifying reCAPTCHA:', error);
+       res.render("failure");
+   });
 });
 
 let port = process.env.PORT;

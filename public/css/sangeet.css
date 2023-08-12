@@ -148,6 +148,7 @@ hr {
   font-size: 40px;
   font-weight: bold;
   transition: 0.3s;
+  z-index: 9999;
 }
 
 .close:hover,
@@ -176,6 +177,7 @@ hr {
     font-size: 40px;
     font-weight: bold;
     transition: 0.3s;
+    z-index: 9999;
   }
 
 }
