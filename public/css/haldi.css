@@ -242,15 +242,18 @@ hr {
       margin-top: 25%;
   }
 
+  .modal {
+    padding-top: 125px;
+  }
+
   .modal-content {
-    margin: auto;
     width: 90%;
     height: 100%;
   }
 
   .close {
     position: absolute;
-    top: 9%;
+    top: 11%;
     right: 0.1%;
     color: #f1f1f1;
     font-size: 30px;
