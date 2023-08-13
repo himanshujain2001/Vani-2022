@@ -218,13 +218,15 @@ hr {
 /* The Close Button */
 .close {
   position: absolute;
-  top: 10%;
+  top: 13.5%;
   right: 4%;
   color: #f1f1f1;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: bold;
   transition: 0.3s;
   z-index: 9999;
+  background-color: #000000;
+  border-radius: 50%;
 }
 
 .close:hover,
@@ -250,9 +252,11 @@ hr {
     top: 9%;
     right: 0.1%;
     color: #f1f1f1;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
     transition: 0.3s;
     z-index: 9999;
+    background-color: #000000;
+    border-radius: 50%;
   }
 }

@@ -250,7 +250,7 @@ i:hover {
 .bridediv {
   margin: 20px 0;
   margin-top: 50px;
-  height: 300px;
+  height: 330px;
   width: 100vw;
   overflow: hidden;
   opacity: 0; /* Hide the div initially */
@@ -382,7 +382,7 @@ i:hover {
 
   @keyframes typewriter {
     from { width: 0%;}
-    to { width: 100%;}
+    to { width: 95%;}
   }
 
   @keyframes blink {

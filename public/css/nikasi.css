@@ -166,6 +166,8 @@ hr {
   font-weight: bold;
   transition: 0.3s;
   z-index: 9999;
+  background-color: #000000;
+  border-radius: 50%;
 }
 
 .close:hover,
@@ -195,6 +197,8 @@ hr {
     font-weight: bold;
     transition: 0.3s;
     z-index: 9999;
+    background-color: #000000;
+    border-radius: 50%;
   }
 
 }

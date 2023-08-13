@@ -40,7 +40,8 @@ app.get("/failure",function(req,res){
 });
 
 app.get("/contact",(req,res) => {
-  res.render("contact",{year:currentYear});
+  var mail = process.env.mail;
+  res.render("contact",{year:currentYear, mailId: mail});
 });
 
 // Images Routes
@@ -103,7 +104,7 @@ app.post("/login", (req,res) => {
   //   isAuthenticated = false;
   //   res.render("failure");
   // }
-   
+
    const userId = req.body.username;
    const pass = req.body.pswd;
    const recaptchaResponse = req.body['g-recaptcha-response']; // Get reCAPTCHA response
