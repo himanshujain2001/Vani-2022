@@ -110,10 +110,10 @@ hr {
 /* The Close Button */
 .close {
   position: absolute;
-  top: 10%;
+  top: 13.5%;
   right: 4%;
   color: #f1f1f1;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: bold;
   transition: 0.3s;
   z-index: 9999;
@@ -134,6 +134,10 @@ hr {
       margin-top: 25%;
   }
 
+  .modal {
+    padding-top: 125px;
+  }
+
   .modal-content {
     width: 90%;
     height: 100%;
@@ -141,10 +145,10 @@ hr {
 
   .close {
     position: absolute;
-    top: 9%;
-    right: 0.1%;
+    top: 11%;
+    right: 0.2%;
     color: #f1f1f1;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
     transition: 0.3s;
     z-index: 9999;

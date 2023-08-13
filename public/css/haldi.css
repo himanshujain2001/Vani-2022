@@ -218,7 +218,7 @@ hr {
 /* The Close Button */
 .close {
   position: absolute;
-  top: 13.5%;
+  top: 12.5%;
   right: 4%;
   color: #f1f1f1;
   font-size: 30px;
@@ -254,7 +254,7 @@ hr {
   .close {
     position: absolute;
     top: 11%;
-    right: 0.1%;
+    right: 0.2%;
     color: #f1f1f1;
     font-size: 30px;
     font-weight: bold;
