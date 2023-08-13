@@ -243,6 +243,7 @@ hr {
   }
 
   .modal-content {
+    margin: auto;
     width: 90%;
     height: 100%;
   }
