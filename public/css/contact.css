@@ -31,6 +31,14 @@ body {
   justify-content: space-around;
 }
 
+.button {
+  transition: all 0.25s linear;
+}
+
+.button:hover {
+  transform: scale(1.3);
+}
+
 /* Contact Section */
 
 .contactSection {
@@ -57,9 +65,27 @@ body {
   font-weight: normal;
 }
 
+.scrollingtext {
+  position: relative;
+  /* animation: rightToLeft 40s infinite; */
+  animation: 15s linear 0s infinite running rightToLeft;
+}
+
+@keyframes rightToLeft {
+  from {
+    top: 0px;
+    right: -100%;
+  }
+  to {
+    top: 0px;
+    right: 820px;
+  }
+}
+
 .feedback {
   color: #45caff;
   animation: animate 1.5s linear infinite;
+  text-decoration: none;
 }
 
 @keyframes animate{
@@ -72,16 +98,6 @@ body {
   100%{
     opacity: 0;
   }
-}
-
-.scrollingtext {
-  position: relative;
-  animation: rightToLeft 40s infinite;
-}
-
-@keyframes rightToLeft {
-  from {right:-100%}
-  to {right:1000px;}
 }
 
 @media (max-width: 767px) {

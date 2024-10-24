@@ -138,7 +138,7 @@ app.post("/login", (req,res) => {
    });
 });
 
-let port = process.env.PORT;
+let port = process.env.PORT || 5500;
 
 app.listen(port,function(){
   console.log("Server is running on port "+port);
