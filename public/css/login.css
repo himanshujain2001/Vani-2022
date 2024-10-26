@@ -3,7 +3,7 @@ body {
   height: 100%;
 }
 
-body {
+ body {
   /* display: flex; */
   align-items: center;
   padding-top: 40px;
@@ -12,8 +12,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-/* O2 Image
-https://5.imimg.com/data5/ANDROID/Default/2021/5/CR/JX/FS/1092830/product-jpeg-500x500.jpg */
 
 .form-login {
   width: 100%;
