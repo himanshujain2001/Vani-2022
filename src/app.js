@@ -20,4 +20,10 @@ import userRoute from "./routes/user.route.js"
 
 app.use('/vani-2022/users', userRoute)
 
+// only telling render to do naviagte to this path as it's not going automatically to this for homepage
+// Redirect all requests from the root ("/") to the base path
+app.get("/", (req, res) => {
+    res.redirect("/vani-2022/users");
+});
+
 export { app }
