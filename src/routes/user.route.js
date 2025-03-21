@@ -6,7 +6,7 @@ import { verifyJWT } from "../middlewares/auth.middleware.js";
 const router = Router()
 
 // GET requests
-router.route("/home").get(homePage)
+router.route("/").get(homePage)
 router.route("/login").get(loginPage)
 router.route("/contact").get(contactPage)
 router.route("/gallery").get(loginPage)
