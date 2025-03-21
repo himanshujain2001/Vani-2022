@@ -187,21 +187,25 @@ hr {
   margin: auto;
   display: block;
   width: 90%;
-  height: 90%
-  max-width: 900px;
-  max-height: 500px;
+  height: 90%;
+  max-width: 1300px;
+  max-height: 650px;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
 #caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
+  /* margin: auto; */
+  /* display: block; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 80%; */
+  /* max-width: 700px; */
   text-align: center;
   color: #ccc;
   padding: 10px 0;
   height: 150px;
+  color: #efa601;
 }
 
 /* Add Animation - Zoom in the Modal */
@@ -218,8 +222,8 @@ hr {
 /* The Close Button */
 .close {
   position: absolute;
-  top: 12.5%;
-  right: 4%;
+  top: 11%;
+  right: 6.5%;
   color: #f1f1f1;
   font-size: 30px;
   font-weight: bold;

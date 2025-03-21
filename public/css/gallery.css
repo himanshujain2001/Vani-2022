@@ -2,6 +2,10 @@
   font-family: 'Playfair Display', serif;
 } */
 
+body {
+  overflow-x: hidden;
+}
+
 .cards {
   margin-top: 10rem;
   margin-bottom: 10px;

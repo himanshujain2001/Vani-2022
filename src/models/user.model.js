@@ -22,17 +22,10 @@ userSchema.pre("save", async function (next) {
 })
 
 userSchema.methods.generateAccessToken = function() {
-    console.log("Generating access token");
-    console.log(process.env.ACCESS_TOKEN_SECRET);
-    console.log(process.env.ACCESS_TOKEN_EXPIRY);
-    console.log(this._id);
-    console.log(this.phonenumber);
-    console.log(process.env.ACCESS_TOKEN_EXPIRY);
-    
     return jwt.sign(
         {
-            _id: this._id
-            // phonenumber: this.phonenumber
+            _id: this._id,
+            phonenumber: this.phonenumber
         },
         process.env.ACCESS_TOKEN_SECRET,
         {expiresIn: process.env.ACCESS_TOKEN_EXPIRY}

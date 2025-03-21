@@ -18,10 +18,10 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
     <!-- CSS -->
-    <link href="css/login.css" rel="stylesheet" >
+    <link href="/css/login.css" rel="stylesheet" >
 
     <!-- Favicon -->
-    <link rel="icon" href="images/tsp-174-modified.png">
+    <link rel="icon" href="/images/tsp-174-modified.png">
 
   </head>
   <body class="text-center">
@@ -32,7 +32,7 @@
 <main class="form-login">
     <h1 class="h3 mb-3 fw-normal">Please login</h1>
 
-   <form action="/login" method="POST">
+   <form action="<%= basePath %>/login" method="POST">
     <div class="form-floating">
       <div class="input-container">
       <i class="fas fa-user icon"></i>
@@ -42,8 +42,15 @@
     <div class="form-floating">
       <div class="input-container">
       <i class="fas fa-lock icon"></i>
-      <input type="password" class="form-control input" id="password-field" name="pswd" placeholder="PASSWORD" autocomplete="off" required>
+      <input type="password" class="form-control input" id="password-field" name="password" placeholder="PASSWORD" autocomplete="off" required>
       <i id="toggle_pwd" class="fas fa-eye eyeicon toggle-password"></i>
+    </div>
+    </div>
+    <div class="form-floating">
+      <div class="input-container">
+      <i class="fas fa-phone icon"></i>
+      <input type="tel" class="form-control input" id="phone-number-field" name="phonenumber" placeholder="PHONE NUMBER" autocomplete="off" required
+       pattern="[0-9]{10}" title="Please enter a 10-digit phone number">
     </div>
     </div>
         <div class="g-recaptcha" data-sitekey="<%= key %>"></div>
