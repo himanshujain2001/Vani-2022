@@ -9,7 +9,7 @@ const router = Router()
 router.route("/").get(homePage)
 router.route("/login").get(loginPage)
 router.route("/contact").get(contactPage)
-router.route("/gallery").get(loginPage)
+router.route("/gallery").get(verifyJWT, galleryPage)
 router.route("/failure").get(failurePage)
 
 // Function routes GET requests

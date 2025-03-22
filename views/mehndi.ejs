@@ -27,13 +27,10 @@
   <body>
 
 
-    <%- include('partials/header') %>
+    <%- include('partials/userheader') %>
 
   <div class="imageSection container-fluid">
        <h1 class="heading">Mehndi Images</h1> <hr>
-       <form action="<%= basePath %>/logout" method="POST" style="display: inline;">
-        <button type="submit" class="btn btn-warning haldibutton">Logout</button>
-      </form>
      <% for(let i=imageStartIndex;i<=imageEndIndex;i++) { %>
        <div class="imageDiv">
         <img class="mehndiImages" id="myImg<%= i %>" src="<%= imgLink %><%= i %>.jpeg" loading="lazy" alt="Mehndi">

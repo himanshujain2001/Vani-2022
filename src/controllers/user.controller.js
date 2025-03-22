@@ -164,6 +164,7 @@ const haldiPage = asyncHandler( async (req, res) => {
 //    var imageLinkFirst=process.env.linkFirst;
     res.render("haldi",
     {
+      color: 'efa601',
       year:currentYear,
       imgLink:process.env.linkFirst,
       imageStartIndex:process.env.imageStartFirst,
@@ -175,6 +176,7 @@ const haldiPage = asyncHandler( async (req, res) => {
 const mehndiPage = asyncHandler (async (req, res) => {
     res.render("mehndi",
     {
+       color: '7c8948',
        year:currentYear,
        imgLink:process.env.linkFirst,
        imageStartIndex:process.env.imageStartSecond,
@@ -186,6 +188,7 @@ const mehndiPage = asyncHandler (async (req, res) => {
 const sangeetPage = asyncHandler (async (req, res) => {
     res.render("sangeet",
     {
+       color: 'ECB390',
        year:currentYear,
        imgLink:process.env.linkFifth,
        imageStartIndex:process.env.imageStartThird,
@@ -197,6 +200,7 @@ const sangeetPage = asyncHandler (async (req, res) => {
 const receptionPage = asyncHandler (async (req, res) => {
     res.render("reception",
     {
+       color: 'be944b',
        year:currentYear,
        imgLink:process.env.linkFourth,
        imageStartIndex:process.env.imageStartFourth,
@@ -208,6 +212,7 @@ const receptionPage = asyncHandler (async (req, res) => {
 const welcomePage = asyncHandler (async (req, res) => {
     res.render("welcome",
     {
+       color: 'c83b2a',
        year:currentYear,
        imgLink:process.env.linkFifth,
        imageStartIndex:process.env.imageStartFifth,
@@ -219,6 +224,7 @@ const welcomePage = asyncHandler (async (req, res) => {
 const nikasiPage = asyncHandler (async (req, res) => {
     res.render("nikasi",
     {
+       color: 'FFDBA4',
        year:currentYear,
        imgLink:process.env.linkSixth,
        imageStartIndex:process.env.imageStartSixth,
