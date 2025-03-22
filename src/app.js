@@ -3,15 +3,6 @@ import cookieParser from "cookie-parser"
 
 const app=express();
 
-// Enforce HTTPS for secure connections
-app.use((req, res, next) => {
-    if (!req.secure && process.env.NODE_ENV === "production") {
-        // Redirect HTTP to HTTPS
-        return res.redirect(`https://${req.headers.host}${req.url}`);
-    }
-    next();
-});
-
 app.locals.basePath = "/vani-2022/users"
 
 app.use(express.json({limit: "16kb"})) // to get data in json format
