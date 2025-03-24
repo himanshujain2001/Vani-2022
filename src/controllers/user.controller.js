@@ -1,8 +1,6 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
-import { validateFields } from "../utils/validateFields.js";
 import { User } from "../models/user.model.js";
 import { ApiError } from "../utils/ApiError.js";
-import { ApiResponse } from "../utils/ApiResponse.js";
 import axios from "axios";
 import jwt from "jsonwebtoken"
 
@@ -55,15 +53,6 @@ const generateAccessAndRefreshToken = async (userID) => {
 
 // Login Functionality Controller
 const loginUser = asyncHandler( async (req, res, next) => {
-
-    // Validation
-    try {
-        validateFields(req.body, ["username", "password", "phonenumber"])
-        // validateFields(req.body, ["username", "password"])
-        console.log("All fields are correct");
-    } catch (error) {
-        console.log(error);
-    }
 
      const {username: userId, password, phonenumber } = req.body;
 

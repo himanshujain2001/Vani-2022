@@ -2,6 +2,7 @@ import { Router } from "express";
 import { homePage, loginPage, contactPage, galleryPage, failurePage, haldiPage, mehndiPage, sangeetPage, receptionPage, welcomePage,
      nikasiPage, redirectToLoginPage, loginUser, logoutUser} from "../controllers/user.controller.js";
 import { verifyJWT } from "../middlewares/auth.middleware.js";
+import { validateFields } from "../middlewares/validateFields.middleware.js";
 
 const router = Router()
 
@@ -22,7 +23,7 @@ router.route("/welcome").get(verifyJWT, welcomePage)
 router.route("/nikasi").get(verifyJWT, nikasiPage)
 
 // POST requests
-router.route("/login").post(loginUser, galleryPage)
+router.route("/login").post(validateFields, loginUser, galleryPage)
 router.route("/logout").post(verifyJWT, logoutUser)
 router.route("/failure").post(redirectToLoginPage)
 

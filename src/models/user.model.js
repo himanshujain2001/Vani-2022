@@ -6,7 +6,9 @@ const userSchema = new mongoose.Schema({
     phonenumber: {
         type: String,
         required: [true, "Phone number is required"],
-        unique: true
+        unique: true,
+        minlength: 10,
+        maxlength: 10
     },
     refreshToken: {
         type: String
